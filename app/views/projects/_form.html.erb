@@ -1,3 +1,17 @@
+<head>
+<style>
+  .form-submit-button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+  }
+</style>
+</head>
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
     <div style="color: red">
@@ -12,16 +26,25 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <h2>
+
+    <div style="display: block; float: left; margin-top: 5px">
+    <%= form.label :title, style: "display: block; float: left; margin-right: 5px" %>
+    <%= form.text_field :title, style: "border-radius: 5px;" %>
+
+      <div class="btn btn-warning p-0">
+      <%= form.submit class: "btn"%>
+      </div>
+
+    </h2>
   </div>
+</div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.label :description, style: "display: block; font-size: 20px; font-weight: bold;" %>
+    <%= form.text_area :description, style: "width: 100%; height: 150px; font-size: 16px" %> 
   </div>
+  
 
-  <div>
-    <%= form.submit %>
-  </div>
+  
 <% end %>

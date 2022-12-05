@@ -13,22 +13,21 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+    <a class="navbar-brand">Portfolio</a>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="http://localhost:3000/projects">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Sign in</a></li>
-            <li><a class="dropdown-item" href="#">Sign up</a></li>
+            <li><a class="dropdown-item" href="http://localhost:3000/users/sign_in">Sign in</a></li>
+            <li><a class="dropdown-item" href="http://localhost:3000/users/sign_up">Sign up</a></li>
           </ul>
         </li>
       </ul>
@@ -71,30 +70,26 @@ I will be graduating May 2024, Here are some of my projects! <br /> </p>
   </ul>
 </div>
 
+<div class="container-fluid pb-5">
+  <div class="btn btn-warning">
+  <%= link_to "New project", new_project_path, :class => "btn" %> 
+  </div>
+</div>
+
 <!-- Project Columns -->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4 border border-warning rounded">
-      <h3>Project 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <button type="button" onclick="location.href='https://rubyonrails.org/';" class="btn btn-warning">Show this project</button>
-      <p> </p>
+  <% @projects.each do |project| %>
+    <div id="projects", class="col-sm-4 border border-warning rounded pb-5">
+      
+        <%= render project %>
+
+        <div class="btn btn-warning">
+          <%= link_to "Show this project", project, :class => "btn" %> 
+        </div>
+
     </div>
-    <div class="col-sm-4 border border-warning rounded">
-      <h3>Project 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <button type="button" onclick="location.href='https://rubyonrails.org/';" class="btn btn-warning">Show this project</button>
-      <p> </p>
-    </div>
-    <div class="col-sm-4 border border-warning rounded">
-      <h3>Project 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <button type="button" onclick="location.href='https://rubyonrails.org/';" class="btn btn-warning">Show this project</button>
-      <p> </p>
-    </div>
+    <% end %>
   </div>
 </div>
 
