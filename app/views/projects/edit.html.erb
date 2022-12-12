@@ -10,50 +10,54 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div class="container-fluid">
-    
-    <a class="navbar-brand">Portfolio</a>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand">Portfolio</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:3000/projects">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="http://localhost:3000/users/sign_in">Sign in</a></li>
-            <li><a class="dropdown-item" href="http://localhost:3000/users/sign_up">Sign up</a></li>
-          </ul>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost:3000">Home</a>
+          </li>
+          <li>
+            <a class="nav-link active" aria-current="page" href="http://localhost:3000/projects">Projects</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="http://localhost:3000/users/sign_in">Sign in</a></li>
+              <li><a class="dropdown-item" href="http://localhost:3000/users/sign_up">Sign up</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="container-fluid p-5 bg-warning text-center">
+    <h1>Editing Project</h1>
   </div>
-</nav>
 
-<div class="container-fluid p-5 bg-warning text-center">
-  <h1>Editing Project</h1>
-</div>
-
-<!-- Notices are shown on the page in green, like when the project has been updated -->
-<p style="color: green"><%= notice %></p>
+  <!-- Notices are shown on the page in green, like when the project has been updated -->
+  <p style="color: green"><%= notice %></p>
 
 
 
-<div class="container-fluid p-5 text-center">
-  <%= render "form", project: @project, :class => "width = 100"%>
-</div>
+  <div class="container-fluid p-5 text-center">
+    <%= render "form", project: @project, :class => "width = 100"%>
+  </div>
 
-<br>
+  <br>
 
-<!-- Buttons to show and go back to projects page -->
-<div class="btn btn-warning">
-  <%= link_to "Show this project", @project, :class => "btn" %>
-</div>
-<div class="btn btn-warning">
-<%= link_to "Back to projects", projects_path, :class => "btn" %>
-</div>
+  <!-- Buttons to show and go back to projects page -->
+  <div class="btn btn-warning">
+    <%= link_to "Show this project", @project, :class => "btn" %>
+  </div>
+  <div class="btn btn-warning">
+    <%= link_to "Back to projects", projects_path, :class => "btn" %>
+  </div>
+</body>
